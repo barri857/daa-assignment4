@@ -72,7 +72,7 @@ def draw_series(axis, summary, algorithms, inputs, metric):
             )
     axis.set_xlabel("Input length n (characters)")
     axis.grid(True, which="major", alpha=0.25)
-    axis.legend(fontsize=8, frameon=True)
+    axis.legend(fontsize=9.5, frameon=True)
 
 
 def finish(figure, destination):
@@ -83,17 +83,17 @@ def finish(figure, destination):
 
 def create_plots(summary, output):
     output.mkdir(parents=True, exist_ok=True)
-    plt.rcParams.update({"font.size": 9, "axes.titlesize": 10, "axes.labelsize": 9})
+    plt.rcParams.update({"font.size": 10, "axes.titlesize": 11, "axes.labelsize": 11})
 
     figure, axes = plt.subplots(1, 2, figsize=(10.4, 3.25))
     figure.suptitle("Recursive edit distance: repeated work grows rapidly", fontsize=12)
     draw_series(axes[0], summary, ["recursive"], ["disjoint", "random"], "calls")
     axes[0].set_title("Measured recursive calls")
-    axes[0].set_ylabel("Recursive entries (calls, logarithmic scale)")
+    axes[0].set_ylabel("Calls (count; log scale)")
     axes[0].set_yscale("log")
     draw_series(axes[1], summary, ["recursive"], ["disjoint", "random"], "time_ms")
     axes[1].set_title("Median of five runs")
-    axes[1].set_ylabel("Elapsed time (ms, logarithmic scale)")
+    axes[1].set_ylabel("Time (ms; log scale)")
     axes[1].set_yscale("log")
     finish(figure, output / "recursive.png")
 
@@ -118,7 +118,7 @@ def create_plots(summary, output):
     axes[0].set_xscale("log", base=2)
     axes[0].set_yscale("log")
     axes[0].grid(True, alpha=0.25)
-    axes[0].legend(fontsize=8)
+    axes[0].legend(fontsize=9.5)
     draw_series(axes[1], summary, ["table", "two_rows"], ["disjoint", "random"], "time_ms")
     axes[1].set_title("Median of five runs")
     axes[1].set_ylabel("Elapsed time (ms)")
@@ -130,11 +130,11 @@ def create_plots(summary, output):
     figure.suptitle("String search: random and repeated-prefix inputs (pattern length 64)", fontsize=12)
     draw_series(axes[0], summary, ["naive", "kmp"], ["adversarial", "random"], "total_comparisons")
     axes[0].set_title("KMP includes LPS construction")
-    axes[0].set_ylabel("Character comparisons (count, logarithmic scale)")
+    axes[0].set_ylabel("Comparisons (count; log scale)")
     axes[0].set_yscale("log")
     draw_series(axes[1], summary, ["naive", "kmp"], ["adversarial", "random"], "time_ms")
     axes[1].set_title("Median of five runs")
-    axes[1].set_ylabel("Elapsed time (ms, logarithmic scale)")
+    axes[1].set_ylabel("Time (ms; log scale)")
     axes[1].set_yscale("log")
     finish(figure, output / "string_search.png")
 
