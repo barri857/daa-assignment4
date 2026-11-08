@@ -3,6 +3,9 @@ package city;
 public class TableEditDistance implements EditDistance {
     private final Metrics metrics = new Metrics();
 
+    // State: dp[i][j] is the distance between the first i and j characters of a and b.
+    // Transition: equal characters use dp[i-1][j-1]; otherwise 1 + min(top, left, diagonal).
+    // Base case: dp[0][j]=j and dp[i][0]=i.
     public int distance(String a, String b) {
         metrics.reset();
         int n = a.length();

@@ -3,6 +3,9 @@ package city;
 public class TwoRowEditDistance implements EditDistance {
     private final Metrics metrics = new Metrics();
 
+    // State: previous[j]=D(i-1,j) and current[j]=D(i,j), where D is prefix edit distance.
+    // Transition: equal characters use previous[j-1]; otherwise 1 + min(previous[j], current[j-1], previous[j-1]).
+    // Base case: previous[j]=j and current[0]=i at the start of each row.
     public int distance(String a, String b) {
         metrics.reset();
         int n = a.length();
