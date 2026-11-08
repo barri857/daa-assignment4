@@ -42,7 +42,7 @@ The same command recreates the same inputs, answers and counters. Wall-clock tim
 
 ## Generate the three plots
 
-Python 3.10+ and matplotlib are needed only to recreate the PNG charts:
+Python 3.11+ and matplotlib are needed only to recreate the PNG charts:
 
 ```text
 python -m pip install -r requirements.txt
