@@ -20,7 +20,7 @@ Student: Temirgaliyev Nurassyl. Group: SE-2523.
 
 # Edit Distance: Design and Results
 
-The code is comment-free as requested. The state, transition and base case for each version are documented here instead of source comments.
+The state, transition and base case for each implementation are given below.
 
 **Recursive.** State: D(i,j) is the distance between the first i characters of a and first j of b. Transition: equal last characters give D(i-1,j-1); otherwise use 1 + min(D(i-1,j), D(i,j-1), D(i-1,j-1)), without storing answers. Base case: D(0,j)=j and D(i,0)=i.
 

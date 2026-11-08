@@ -6,7 +6,7 @@
 **Branch:** main  
 **Tag:** v1.0
 
-A simple Java 17+ Maven project with recursive, full-table and two-row edit distance, naive search and KMP. Source code contains no comments. DP state, transition and base cases are explained in REPORT.md and REPORT.pdf instead of the source comments requested by the assignment, following the user's explicit preference.
+Java 17+ Maven project implementing recursive, full-table and two-row edit distance, naive search and KMP. The report explains the DP state, transition and base cases.
 
 ## Build and test
 
@@ -38,7 +38,7 @@ It writes results/results.csv and results/environment.txt. The seed is 20261108.
 java -cp target/classes city.Experiment results/repeat.csv
 ```
 
-The same command recreates the same inputs, answers and counters. Wall-clock times and the environment timestamp will vary. Run the charts again after new measurements; the supplied report describes the supplied CSV.
+The same command recreates the same inputs, answers and counters. Wall-clock times and the environment timestamp will vary. Run the charts again after new measurements. The report uses the results included in this submission.
 
 ## Generate the three plots
 
@@ -68,8 +68,8 @@ All search indices start at zero. An empty pattern throws IllegalArgumentExcepti
 
 The local repository uses main and has incremental commits, including the experiment card before the first measurement. The final version is tagged v1.0. The ZIP includes .git so the local history and tag are preserved.
 
-Submission archive: DAA_Assignment4_Nurassyl_Temirgaliyev_SE-2523.zip, using the required name_surname_group order. Upload this archive to Moodle and include the GitHub link above. Moodle upload is not performed by this project.
+Submission archive: DAA_Assignment4_Nurassyl_Temirgaliyev_SE-2523.zip, using the required name_surname_group order. Upload this archive to Moodle and include the GitHub link above.
 
 ## AI-use acknowledgement
 
-OpenAI Codex generated the implementation, tests, experiment runner, plotting script and report. The code was checked with JUnit 5, and the reported times and counters came from actual executions. AI assistance was used throughout the preparation of this assignment.
+OpenAI Codex was used to generate the code, tests, experiment scripts and report. The reported results came from running the tests and experiments.
