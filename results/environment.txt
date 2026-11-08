@@ -1,0 +1,19 @@
+Recorded at: 2026-11-08T11:42:03.730263800Z
+Java version: 25
+Java VM: OpenJDK 64-Bit Server VM
+OS: Windows 11 10.0
+Architecture: amd64
+CPU: Intel64 Family 6 Model 141 Stepping 1, GenuineIntel
+Available processors: 16
+Seed: 20261108
+Warmups per case: 3
+Measured runs per case: 5
+Timer: System.nanoTime; time_ms is elapsed nanoseconds / 1000000.0
+Timing includes algorithm counters, KMP preprocessing and match list construction.
+Input generation, validation, checksum updates and CSV writing are outside timing.
+Each algorithm receives identical inputs; counters reset on every public call.
+Random words use alphabet ABCD and java.util.Random with seed derived from n and m.
+Recursive sizes: 2,4,6,8,10,12; DP sizes: 128,256,512,1024,2048.
+Search sizes: 4096,8192,16384,32768,65536,131072; pattern length: 64.
+Edit inputs: random, disjoint a^n/b^n; search inputs: random, adversarial a^n/a^63b.
+Inputs, answers and operation counts are reproducible; elapsed times vary by run.
